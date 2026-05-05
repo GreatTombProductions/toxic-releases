@@ -1,0 +1,45 @@
+{
+  "source": "U.S. Environmental Protection Agency, Toxics Release Inventory (TRI) Program",
+  "source_url": "https://www.epa.gov/toxics-release-inventory-tri-program",
+  "download_url": "https://data.epa.gov/efservice/downloads/tri/mv_tri_basic_download/",
+  "description": "Toxic chemical releases reported by industrial facilities under Section 313 of the Emergency Planning and Community Right-to-Know Act (EPCRA)",
+  "reporting_year": 2023,
+  "update_frequency": "Annual (facilities report by July 1 each year)",
+  "disclaimer": "TRI data reflects self-reported releases from facilities meeting reporting thresholds (10+ employees AND manufacturing/processing/using listed chemicals above threshold quantities). Smaller facilities and non-listed chemicals are not included. Absence of a facility does not mean no toxic releases occur nearby. Release quantities are estimates, not measurements. This tool is informational and is not a health risk assessment.",
+  "data_freshness": {
+    "vintage": "2023",
+    "release_date": "2026-05-02",
+    "source_update_frequency": "annual",
+    "staleness_threshold_months": 18,
+    "staleness_action": "refresh_or_warn"
+  },
+  "facility_format": [
+    "trifd",
+    "name",
+    "city",
+    "state",
+    "zip",
+    "lat",
+    "lon",
+    "industry",
+    "total_lbs",
+    "air_lbs",
+    "water_lbs",
+    "num_chemicals",
+    "num_carcinogens",
+    "num_pbts",
+    "num_pfas",
+    "parent_company"
+  ],
+  "chemical_format": [
+    "trifd",
+    "chemical",
+    "cas_number",
+    "carcinogen",
+    "pbt",
+    "pfas",
+    "air_lbs",
+    "water_lbs",
+    "total_lbs"
+  ]
+}

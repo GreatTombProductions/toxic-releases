@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxic Releases Near You — EPA TRI Facility Lookup</title>
+    <meta name="description" content="Search toxic chemical releases reported to the EPA near any U.S. zip code. 21,000+ industrial facilities, carcinogens, PFAS, and more.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Toxic Releases Near You</h1>
+        <p class="subtitle">EPA Toxics Release Inventory — what industrial facilities report releasing near your zip code</p>
+    </header>
+
+    <main>
+        <section id="search-section">
+            <div class="search-box">
+                <label for="zip-input">Enter your ZIP code</label>
+                <div class="search-row">
+                    <input type="text" id="zip-input" placeholder="e.g. 77001" maxlength="5" inputmode="numeric" pattern="[0-9]*" autocomplete="postal-code">
+                    <select id="radius-select">
+                        <option value="5">5 miles</option>
+                        <option value="10" selected>10 miles</option>
+                        <option value="25">25 miles</option>
+                        <option value="50">50 miles</option>
+                    </select>
+                    <button id="search-btn" disabled>Search</button>
+                </div>
+                <div id="search-status"></div>
+            </div>
+        </section>
+
+        <section id="results-section" class="hidden">
+            <div id="results-summary"></div>
+            <div id="results-list"></div>
+        </section>
+
+        <section id="detail-section" class="hidden">
+            <button id="back-btn">&larr; Back to results</button>
+            <div id="facility-detail"></div>
+        </section>
+
+        <section id="stats-section">
+            <h2>National Overview</h2>
+            <p class="stats-intro">Under the Emergency Planning and Community Right-to-Know Act, industrial facilities must report toxic chemical releases to the EPA annually. This data covers <span id="stat-year">2023</span> reports.</p>
+            <div id="stats-grid" class="stats-grid"></div>
+            <div id="top-chemicals"></div>
+            <div id="top-industries"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>Source:</strong> U.S. EPA Toxics Release Inventory (TRI), <span id="footer-year">2023</span> reporting year. ZIP code centroids from U.S. Census Bureau.</p>
+            <p><strong>What TRI covers:</strong> Facilities with 10+ employees that manufacture, process, or use listed toxic chemicals above threshold quantities. Smaller facilities and non-listed chemicals are not included. Absence of a facility near you does not mean no toxic releases occur.</p>
+            <p><strong>What this is:</strong> An informational tool. Release quantities are self-reported estimates, not measurements. This is not a health risk assessment and should not be treated as one. Consult your local health department or EPA regional office for health guidance.</p>
+            <p class="footer-meta">Data from <a href="https://www.epa.gov/toxics-release-inventory-tri-program" rel="noopener">EPA TRI Program</a>. Pipeline and source on <a href="https://github.com/GreatTombProductions/toxic-releases" rel="noopener">GitHub</a>.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
